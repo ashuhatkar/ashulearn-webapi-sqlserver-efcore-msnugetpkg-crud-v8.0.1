@@ -1,6 +1,4 @@
-﻿The Entity Framework Core tools help with design-time development tasks. They're primarily used to manage Migrations and to scaffold a DbContext and entity types by reverse engineering the schema of a database.
-Microsoft.EntityFrameworkCore.Design is for cross-platform command line tooling.
-
+﻿
 ## Setup development environment
 
 - Clone the repository: https://github.com/ashuhatkar/ashulearn-webapi-sqlserver-efcore-msnugetpkg-crud-v8.0.1
@@ -40,6 +38,10 @@ Now listening on: http://localhost:<port>
 - Cloud infrastructure subscription
 
 ## Getting started
+
+The Entity Framework Core tools help with design-time development tasks. They're primarily used to manage Migrations and to scaffold a DbContext and entity types by reverse engineering the schema of a database.
+
+Microsoft.EntityFrameworkCore.Design is for cross-platform command line tooling.
 
 `Microsoft.EntityFrameworkCore.Design` contains all the design-time logic for Entity Framework Core. It's the code that all of the various tools (PMC cmdlets like `Add-Migration`, `dotnet ef` & `ef.exe`) call into.
 
