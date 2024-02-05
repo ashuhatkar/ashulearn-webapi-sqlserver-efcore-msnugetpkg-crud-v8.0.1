@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  sqlserver_2022:
+    # Tag or partial image IO. Can be local or remote - Compose will
+    # attempt to pull if it doesn't exist locally.
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: sqlserver_2022
+    # Expose ports. Either specify both ports (HOST:CONTAINER), or just the
+    # container port (a random host port will be chosen).
+    #
+    # Note: When mapping ports in the HOST:CONTAINER format, you may experience
+    # erroreous results when using a container port lower than 60, bcoz YAML
+    # will parse numbers in the format xx:yy as sexagesimal (base 60). For this
+    # reason, we recommend always explicitly specifying you port mappings as
+    # strings.
+    ports:
+      - "1433:1433"
+    # Add environment variables from a file. Can be a single value or a list.
+    # If you have specified a Compose file with docker-compose -f FILE, paths
+    # Environment variables specified in environment override these values.
+    # Compose expects each line in an env file to be in VAR-VAL format.
+    env_file:
+      - sapassword.env
+    # Add environment variables with only a key are resolved to their values on
+    # the machine Compose is running on, which can be helpful for secret or
+    # host-specific values.
+    environment:
+      # SA_PASSWORD = "MyStrongPass@word!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+    volumes:
+      - mssql_data_vol:/var/opt/mssql
+
+volumes:
+  mssql_data_vol:
