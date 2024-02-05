@@ -32,7 +32,7 @@ dotnet restore <project>.sln
 dotnet run --project src/Services/Nfs.Catalog/src/Nfs.Catalog.Service/Nfs.Catalog.Service.csproj
 ```
 
-Now listening on: http://localhost:<port>
+Now listening on: https://localhost:7179
 
 - Configure local kubernetes
 - Cloud infrastructure subscription
