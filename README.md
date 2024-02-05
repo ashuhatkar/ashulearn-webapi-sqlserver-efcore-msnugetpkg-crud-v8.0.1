@@ -10,13 +10,15 @@ Microsoft.EntityFrameworkCore.Design is for cross-platform command line tooling.
 - .NET Aspire SDK component in Individual components.
 - Install the latest .NET 8 SDK
 - On Mac/Linux (or if not using Visual Studio), install the Aspire workload with the following commands:
-- dotnet workload update
-- dotnet workload install aspire
-- dotnet restore <project>.sln
-- Configure Docker desktop is free to use as a part of the Docker Personal subscription for individuals non-commercial open-source projects.
+- `dotnet workload update`
+- `dotnet workload install aspire`
+- `dotnet restore <project>.sln`
+- Install and configure Docker desktop is free to use as a part of the Docker Personal subscription for individuals non-commercial open-source projects.
 - Run SQL Server 2022 container image with Docker
 - Configure local kubernetes
 - Cloud infrastructure subscription
+- Run the solution
+- dotnet run --project src/Services/Nfs.Catalog/src/Nfs.Catalog.Service/Nfs.Catalog.Service.csproj
 
 ## Getting started
 
