@@ -5,20 +5,39 @@ Microsoft.EntityFrameworkCore.Design is for cross-platform command line tooling.
 
 - Clone the repository: https://github.com/ashuhatkar/ashulearn-webapi-sqlserver-efcore-msnugetpkg-crud-v8.0.1
 - (Windows only) Install Visual Studio. Visual Studio contains tooling support for .NET Aspire that you will want to have. Visual Studio 2022 version 17.9 Preview.
-- During installation, ensure that the following are selected:
-- ASP.NET and web development workload
-- .NET Aspire SDK component in Individual components.
-- Install the latest .NET 8 SDK
+  - During installation, ensure that the following are selected:
+    - `ASP.NET and web development` workload.
+    - `.NET Aspire SDK` component in Individual components.
+- Install the latest [.NET 8 SDK](https://github.com/dotnet/installer#installers-and-binaries)
 - On Mac/Linux (or if not using Visual Studio), install the Aspire workload with the following commands:
-- `dotnet workload update`
-- `dotnet workload install aspire`
-- `dotnet restore <project>.sln`
-- Install and configure Docker desktop is free to use as a part of the Docker Personal subscription for individuals non-commercial open-source projects.
+```powershell
+dotnet workload update
+dotnet workload install aspire
+dotnet restore <project>.sln
+```
+- Install and configure Docker desktop. It's free to use as a part of the Docker Personal subscription for individuals non-commercial open-source projects.
+
+### Running the solution
+
+> [!WARNING]
+> Remember to ensure that Docker is started
+
 - Run SQL Server 2022 container image with Docker
+
+* (Windows only) Run the application from Visual Studio:
+- Open the project `src/Services/Nfs.Catalog/src/Nfs.Catalog.sln` file in Visual Studio
+- Ensure that `Nfs.Catalog.Service.csproj` is your startup project
+- Hit Ctrl-F5 to launch Aspire
+
+* Or run the application from your terminal:
+```powershell
+dotnet run --project src/Services/Nfs.Catalog/src/Nfs.Catalog.Service/Nfs.Catalog.Service.csproj
+```
+
+Now listening on: http://localhost:<port>
+
 - Configure local kubernetes
 - Cloud infrastructure subscription
-- Run the solution
-- dotnet run --project src/Services/Nfs.Catalog/src/Nfs.Catalog.Service/Nfs.Catalog.Service.csproj
 
 ## Getting started
 
