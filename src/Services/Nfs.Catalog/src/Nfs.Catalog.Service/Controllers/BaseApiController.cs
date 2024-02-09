@@ -10,16 +10,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Nfs.Web.Framework.Controllers;
 
-namespace Nfs.Catalog.Service.Controllers
+namespace Nfs.Catalog.Service.Controllers;
+
+[Produces("application/json")]
+[ApiController]
+public abstract partial class BaseApiController : BaseController
 {
-    [Produces("application/json")]
-    [ApiController]
-    public abstract partial class BaseApiController : BaseController
+    protected virtual IActionResult InvokeHttp404()
     {
-        protected virtual IActionResult InvokeHttp404()
-        {
-            Response.StatusCode = 404;
-            return new EmptyResult();
-        }
+        Response.StatusCode = 404;
+        return new EmptyResult();
     }
 }
