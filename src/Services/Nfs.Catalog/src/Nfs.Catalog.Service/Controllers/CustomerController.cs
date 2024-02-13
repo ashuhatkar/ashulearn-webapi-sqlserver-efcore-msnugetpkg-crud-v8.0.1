@@ -220,7 +220,7 @@ public partial class CustomerController : BaseApiController
         if (customer == null)
             return NotFound();
 
-        var totalRecordsDeleted = await _customerService.DeleteCustomerAsync(customer.Id, customer);
+        var totalRecordsDeleted = await _customerService.DeleteCustomerAsync(customer);
 
         return totalRecordsDeleted;
     }
